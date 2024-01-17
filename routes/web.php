@@ -1,5 +1,8 @@
 <?php
 
+use App\Livewire\Pages\Result;
+use App\Livewire\Pages\Setup;
+use App\Livewire\Pages\Process;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Setup::class)->name('setup');
+
+Route::get('/process', Process::class)->name('process');
+Route::get('/result', Result::class)->name('result');
